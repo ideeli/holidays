@@ -42,7 +42,7 @@ module Holidays
   # Exception thrown when an unknown region is requested.
   class UnkownRegionError < ArgumentError; end
 
-  VERSION = '0.9.0'
+  VERSION = '0.9.2'
 
   @@regions = []
   @@holidays_by_month = {}
@@ -304,7 +304,7 @@ private
   # 1000  1.234000   0.000000   1.234000 (  1.234000)
   # 5000  6.094000   0.031000   6.125000 (  6.141000)
   def self.call_proc(function, year) # :nodoc:
-    proc_key = Digest::MD5.hexdigest("#{function.to_s}_#{year.to_s}")
+    proc_key = Digest::MD5.hexdigest("#{function.to_s}_#{year.to_s(:db)}")
     @@proc_cache[proc_key] = function.call(year) unless @@proc_cache[proc_key]
     @@proc_cache[proc_key]
   end

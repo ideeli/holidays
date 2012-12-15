@@ -15,9 +15,11 @@ The following definition files are included in this installation:
 * holidays/mx
 * holidays/nl
 * holidays/north_america
+* holidays/nyse
 * holidays/pt
 * holidays/scandinavia
 * holidays/se
 * holidays/united_nations
+* holidays/ups
 * holidays/us
 * holidays/za
